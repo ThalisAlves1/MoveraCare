@@ -2,6 +2,7 @@ import cors from 'cors'
 import express from 'express'
 
 import {
+  listarUsuarios,
   listarChamados,
   criarChamadoNoBanco,
   buscarChamadoPorId,
@@ -53,7 +54,7 @@ app.post('/login', async (req, res) => {
 // USUARIOS (debug)
 app.get('/usuarios', async (_req, res) => {
   try {
-    const usuarios = await listarChamados()
+    const usuarios = await listarUsuarios()
     return res.json({ ok: true, usuarios })
   } catch (error) {
     return serverError(res, error)
