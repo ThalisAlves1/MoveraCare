@@ -1,41 +1,39 @@
-# MoverCare Web Starter
+# MoverCare Web corrigido para Codespaces
 
-Painel web inicial do MoverCare para a enfermagem/equipe assistencial criar chamados de transporte intra-hospitalar.
+Esta pasta Web já vem corrigida com:
 
-## Decisão de arquitetura
+- Vite no package.json
+- React e tipos do React
+- tsconfig corrigido
+- services/api.ts apontando para a API na porta 3333
+- type Usuario incluído em src/domain/types.ts
 
-- Web: enfermagem/equipe assistencial cria chamado.
-- Web: coordenador acompanha operação.
-- Web: administrador gerencia usuários, setores, QR Codes e regras.
-- Mobile Kotlin: maqueiro recebe chamado, aceita/recusa, lê QR Code da origem/destino e conclui transporte.
+## Como usar
 
-## O que já está pronto
+Substitua a sua pasta `web` por esta pasta, ou copie estes arquivos para a sua pasta `web`.
 
-- Login visual simples.
-- Dashboard da enfermagem.
-- Indicadores básicos.
-- Lista de chamados.
-- Tela de criação de chamado.
-- Checklist pré-transporte.
-- Validação de campos obrigatórios.
-- Detalhe do chamado criado.
-- Dados salvos em memória durante o uso.
-
-## Como rodar
-
-Abra a pasta no VS Code e rode:
+Depois rode:
 
 ```bash
+cd /workspaces/MoveraCare/web
+rm -rf node_modules package-lock.json
 npm install
 npm run dev
 ```
 
-Depois abra o endereço mostrado no terminal, normalmente:
+## Importante
+
+- Porta 5173 = painel Web
+- Porta 3333 = API/backend
+- A porta 3333 precisa estar como Public no Codespaces
+- O backend precisa estar rodando em outro terminal:
 
 ```bash
-http://localhost:5173
+cd /workspaces/MoveraCare/backend
+npm install
+npm run dev
 ```
 
-## Próximo passo
+Teste a API abrindo:
 
-Conectar esse painel web com o mesmo backend que o app mobile vai usar.
+https://urban-robot-5g6p4vxj444wh7xwg-3333.app.github.dev/health
